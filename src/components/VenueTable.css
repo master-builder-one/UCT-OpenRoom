@@ -1,0 +1,76 @@
+tbody {
+    align-items: left;
+    font-size: 10px;
+}
+thead {
+    font-size: 12px;
+}
+td {
+    padding: 0%;
+    border: 1px solid;
+}
+
+#after-first-column {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+ tbody .Venue  {
+    position: sticky;
+    left: 0;
+}
+
+#first-column {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+#first-column {
+    background-color: rgb(255, 145, 0);
+}
+
+tbody .Venue {
+    background-color: rgb(255, 145, 0);
+}
+
+#after-first-column {
+    margin-top: 0px;
+    background-color: rgb(255, 145, 0);
+    z-index: 1;
+    min-width: 50px;
+}
+
+@media (prefers-color-scheme: light) {
+    #first-column {
+        background-color: rgb(73, 128, 255);
+    }
+    
+    tbody .Venue {
+        background-color: rgb(73, 128, 255);
+    }
+    
+    #after-first-column {
+        margin-top: 0px;
+        background-color:  rgb(73, 128, 255);
+        z-index: 1;
+        min-width: 50px;
+    }
+}
+
+
+h1 {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
+.search-box {
+    position: fixed;
+    top: 17vh;
+    right: 2vw;
+}
+
+
