@@ -9,4 +9,8 @@ export default defineConfig({
       path: "path-browserify",
     },
   },
+  build:{
+    target: "esnext" // or "es2019",
+
+   }
 })
