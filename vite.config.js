@@ -14,11 +14,11 @@ export default defineConfig({
     target: "esnext", // or "es2019",
     rollupOptions: {
       input: {
-        app: '/index.html',
+        app: './',
       },
     },
   },
   server: {
-    open: '/index.html',
+    open: './',
   },
 })
