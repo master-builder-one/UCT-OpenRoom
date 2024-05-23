@@ -5,10 +5,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "",
+    "start": "react-script start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
-    "build": "vite build",
+    "build": "react-scripts build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "test": "react-scripts test",
+    "eject": "react-script eject",
     "preview": "vite preview",
     "host": "vite --host"
   },
@@ -31,6 +35,19 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
+    "react-scripts": "^5.0.1",
     "vite": "^5.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
