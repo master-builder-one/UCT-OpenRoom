@@ -5,7 +5,7 @@ import basename from 'path-browserify'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "/UCT-OpenRoom/",
   resolve: {
     alias: {
       path: "path-browserify",
