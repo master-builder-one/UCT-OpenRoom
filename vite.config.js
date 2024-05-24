@@ -13,13 +13,5 @@ export default defineConfig({
   },
   build:{
     target: "esnext", // or "es2019",
-    rollupOptions: {
-      input: {
-        app: './',
-      },
-    },
-  },
-  server: {
-    open: './',
-  },
+  }
 })
