@@ -68,6 +68,6 @@ file_path = os.path.join(base_path, json_file)
 with open(file_path, "w") as final:
     json.dump(df_array, final)
 
-file_path = os.path.join(base_path, "headings.txt")
+file_path = os.path.join(base_path, "heading.txt")
 with open(file_path, "w") as file:
     file.write(date_header)
