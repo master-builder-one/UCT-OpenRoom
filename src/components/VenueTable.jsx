@@ -1,14 +1,9 @@
 import React from 'react'
 import {useReactTable, getCoreRowModel, flexRender, getFilteredRowModel} from '@tanstack/react-table'
 import { useMemo } from 'react'
-import { Styles } from './TableStyles'
 import  VenueSchedule from '../data/VSchedule.json'
 import "./VenueTable.css"
-import { GlobalFiltering } from '@tanstack/react-table'
-import getFile from './FileName'
-import fs from 'fs'
 import { directoryImport } from 'directory-import';
-// import * as Table from "./data/*.*"
 
 function VenueTable() {
 
@@ -29,7 +24,6 @@ function VenueTable() {
             zero = "";
         tableProp.header = zero + i + ":" + min;
         tableProp.accessorKey = zero + i + ":" + min;
-        // xalert(tableProp.header)
         vColumns.push(tableProp)
         min = "30";
         tablePropHalves.header = zero + i + ":" + min;
@@ -43,7 +37,6 @@ function VenueTable() {
     venue_link.accessorKey = "VenueLink";
     for (var i = 0; i < columnNames.length; i++) {
         vColumns.push(columnNames[i]);
-        //alert(i);
     }
     const columns = vColumns;
 
