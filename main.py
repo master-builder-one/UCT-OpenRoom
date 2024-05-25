@@ -17,7 +17,6 @@ for venue in soup.find_all("span", attrs={"class":"menuhead"}):
     outer_tag = venue.parent
     link = outer_tag["href"]
     link = url + link
-    print(venue.text)
     venues.append({"venue": venue.text, "venue_link": link})
 
 
@@ -27,7 +26,6 @@ i = 0
 file_content = ""
 for a_venue in venues:
     str_table = ""
-    print(a_venue["venue_link"])
     response = requests.get(a_venue["venue_link"])
     soup = BeautifulSoup(response.text, "html5lib")
     table = soup.find("table", attrs = {"id":"tblSchedule"})
@@ -48,7 +46,6 @@ for a_venue in venues:
             time_object[time[0]] = ""
             if len(time) > 1:
                 time_object[time[0]] = time[1]
-            print(time)
 
 
         time_object["Venue"] = a_venue["venue"]
