@@ -61,12 +61,12 @@ with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
 
 
 
-file_path = ".\\uct-find-class\\uct-find-class\\src\\data\\"
+file_path = ".\\src\\data\\"
 file_path += "VSchedule.json"
 with open(file_path, "w") as final:
     json.dump(df_array, final)
 
-file = ".\\uct-find-class\\uct-find-class\\src\\data"
+file = ".\\src\\data"
 file += "\heading.txt"
 
 with open(file, "w") as file:
