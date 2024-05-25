@@ -61,13 +61,14 @@ with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
 
 
 
-file_path = ".\src\data"
-file_path += "\VSchedule.json"
+base_path = "/src/data"
+file_name += "VSchedule.json"
+file_path = os.path.join(base_path, file_name)
+
 with open(file_path, "w") as final:
     json.dump(df_array, final)
 
-file = ".\src\data"
-file += "\heading.txt"
-
-with open(file, "w") as file:
+file_name = "heading.txt"
+file_path = os.path.join(base_path, file_name)
+with open(file_path, "w") as file:
     file.write(file_name)
