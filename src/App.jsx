@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <div class="heading" id ="heading">
-        <input type="image" src="./src/assets/uctlogo_white.png" alt="" />
+        <input type="image" src="./assets/uctlogo_white.png" alt="" />
         <div class="heading-words">
           <h1>UCT Schedule</h1>
           <h3>{fileData}</h3>
