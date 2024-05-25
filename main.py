@@ -20,9 +20,7 @@ for venue in soup.find_all("span", attrs={"class":"menuhead"}):
     link = url + link
     venues.append({"venue": venue.text, "venue_link": link})
 
-
-df = pd.DataFrame()
-df_array = []
+array = []
 i = 0
 file_content = ""
 for a_venue in venues:
@@ -51,9 +49,29 @@ for a_venue in venues:
 
         time_object["Venue"] = a_venue["venue"]
         time_object["VenueLink"] = a_venue["venue_link"]
-        df_array.append(time_object)
+        array.append(time_object)
         i += 1
     table = None
+
+
+# Decode Table
+ps = "//PS_"
+rb = "RB"
+test = "TEST"
+
+for row in array:
+    for column in row:
+        if row[column] == "":
+            row[column] = "Open Room"
+        elif ps in row[column]:
+            row[column] = row[column][5:13]
+        elif rb in row[column]:
+            row[column] = "RB"
+        elif test in row[column]:
+            row[column] = row[column][:14]
+        elif "/" in row[column] and "https://" not in row[column]:
+            cell = row[column]
+            row[column] = row[column][:cell.index("/")]
 
 
 
@@ -62,7 +80,7 @@ json_file = "VSchedule.json"
 file_path = os.path.join(base_path, json_file)
 
 with open(file_path, "w") as final:
-    json.dump(df_array, final)
+    json.dump(array, final)
 
 file_path = os.path.join(base_path, "heading.txt")
 with open(file_path, "w") as file:
