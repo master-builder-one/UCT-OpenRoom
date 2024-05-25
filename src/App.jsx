@@ -8,6 +8,7 @@ import StickyTable from './components/StickyTable'
 import VenueTable from './components/VenueTable'
 import VenueSchedule from './components/VenueSchedule'
 import raw from './data/heading.txt'
+import logo from './assets/uctlogo_white.png'
 
 const fileData = await fetch(raw)
   .then(r => r.text())
@@ -19,7 +20,7 @@ function App() {
   return (
     <>
       <div class="heading" id ="heading">
-        <input type="image" src="./assets/uctlogo_white.png" alt="" />
+        <input type="image" src={logo} alt="" />
         <div class="heading-words">
           <h1>UCT Schedule</h1>
           <h3>{fileData}</h3>
