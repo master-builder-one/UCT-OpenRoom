@@ -70,3 +70,13 @@ button:focus-visible {
   }
 }
 
+@media (min-width:320px)  {
+  .heading {
+    margin-top: 0px;
+    font-size: 58%;
+  }
+  .search-box {
+    margin-top: 6%;
+    font-size: 80%;
+  }
+}
