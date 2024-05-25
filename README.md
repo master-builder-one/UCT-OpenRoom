@@ -1,4 +1,4 @@
-# UCT Website for class  schedule 
+# UCT Website for venue schedules
 
 Available here:
 
