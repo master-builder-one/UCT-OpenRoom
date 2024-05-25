@@ -61,7 +61,7 @@ with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
 
 
 
-base_path = "/src/data"
+base_path = "./src/data"
 file_name += "VSchedule.json"
 file_path = os.path.join(base_path, file_name)
 
