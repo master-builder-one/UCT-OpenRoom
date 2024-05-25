@@ -20,7 +20,6 @@ for venue in soup.find_all("span", attrs={"class":"menuhead"}):
     venues.append({"venue": venue.text, "venue_link": link})
 
 df = pd.DataFrame()
-global date_header = ""
 
 def parse_page(a_venue):
     try: 
@@ -30,9 +29,6 @@ def parse_page(a_venue):
 
         
        
-        if(date_header == "" || date_header == null):
-            date_header = soup.find("h4").text
-        
 
         if table.text != "":
             tables_pd = pd.read_html(response.content, index_col=False)
@@ -73,4 +69,4 @@ with open(file_path, "w") as final:
 
 file_path = os.path.join(base_path, "heading.txt")
 with open(file_path, "w") as file:
-    file.write(date_header)
+    file.write("date-DD-MM-YYYY"))
