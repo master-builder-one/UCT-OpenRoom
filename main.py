@@ -69,4 +69,4 @@ with open(file_path, "w") as final:
 
 file_path = os.path.join(base_path, "heading.txt")
 with open(file_path, "w") as file:
-    file.write("date-DD-MM-YYYY"))
+    file.write("date-DD-MM-YYYY")
