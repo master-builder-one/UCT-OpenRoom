@@ -28,7 +28,10 @@ def parse_page(a_venue):
         soup = BeautifulSoup(response.text, "html5lib")
         table = soup.find("table", attrs = {"id":"tblSchedule"})
 
-        date_header = soup.find("h4").text
+        
+       
+        if(date_header == ""):
+            date_header = soup.find("h4").text
         
 
         if table.text != "":
@@ -56,7 +59,7 @@ def parse_page(a_venue):
 MAX_THREADS = min(os.cpu_count(), len(venues))
 df_array = []
 with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
-    df_array.append(list(executor.map(parse_page, venues)))
+    df_array = list(executor.map(parse_page, venues))
 
 
 
