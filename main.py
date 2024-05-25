@@ -20,7 +20,7 @@ for venue in soup.find_all("span", attrs={"class":"menuhead"}):
     venues.append({"venue": venue.text, "venue_link": link})
 
 df = pd.DataFrame()
-date_header = ""
+global date_header = ""
 
 def parse_page(a_venue):
     try: 
@@ -30,7 +30,7 @@ def parse_page(a_venue):
 
         
        
-        if(date_header == ""):
+        if(date_header == "" || date_header == null):
             date_header = soup.find("h4").text
         
 
