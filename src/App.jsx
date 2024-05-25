@@ -4,7 +4,6 @@ import viteLogo from '/vite.svg'
 import { createRoot } from 'react-dom/client'
 import './css/App.css'
 import './css/index.css'
-//import VenueTable from './components/VenueTable'  
 import StickyTable from './components/StickyTable'
 import VenueTable from './components/VenueTable'
 import VenueSchedule from './components/VenueSchedule'
@@ -15,7 +14,6 @@ const fileData = await fetch(raw)
   .then(text =>  text);
 
 function App() {
-  let sb = "";
   let par = document.getElementById("heading-words");
   const domNode = document.getElementById('root');
   return (
