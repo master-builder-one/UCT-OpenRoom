@@ -62,7 +62,7 @@ with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
 
 
 base_path = "./src/data"
-json_file += "VSchedule.json"
+json_file = "VSchedule.json"
 file_path = os.path.join(base_path, json_file)
 
 with open(file_path, "w") as final:
