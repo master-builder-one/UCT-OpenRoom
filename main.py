@@ -20,7 +20,7 @@ for venue in soup.find_all("span", attrs={"class":"menuhead"}):
     venues.append({"venue": venue.text, "venue_link": link})
 
 df = pd.DataFrame()
-file_name = ""
+date_header = ""
 
 def parse_page(a_venue):
     try: 
@@ -28,7 +28,7 @@ def parse_page(a_venue):
         soup = BeautifulSoup(response.text, "html5lib")
         table = soup.find("table", attrs = {"id":"tblSchedule"})
 
-        file_name = soup.find("h4").text
+        date_header = soup.find("h4").text
         
 
         if table.text != "":
@@ -62,13 +62,12 @@ with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
 
 
 base_path = "./src/data"
-file_name += "VSchedule.json"
-file_path = os.path.join(base_path, file_name)
+json_file += "VSchedule.json"
+file_path = os.path.join(base_path, json_file)
 
 with open(file_path, "w") as final:
     json.dump(df_array, final)
 
-file_name = "heading.txt"
-file_path = os.path.join(base_path, file_name)
+file_path = os.path.join(base_path, "headings.txt")
 with open(file_path, "w") as file:
-    file.write(file_name)
+    file.write(date_header)
