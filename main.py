@@ -4,6 +4,7 @@ import time
 import json
 import pandas as pd
 import os
+from datetime import datetime
 
 
 url = "https://ictsapps.uct.ac.za/classroom/"
@@ -53,6 +54,9 @@ for a_venue in venues:
         i += 1
     table = None
 
+
+current_time = datetime.now()
+print("Run at: ", current_time)
 
 # Decode Table
 ps = "//PS_"
