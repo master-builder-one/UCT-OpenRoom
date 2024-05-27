@@ -2,15 +2,13 @@ import './css/App.css'
 import './css/index.css'
 import VenueTable from './components/VenueTable'
 import raw from './data/heading.txt'
-import logo from './assets/uctlogo_white.png'
+import logo from './assets/uct_logo.png'
 
 const fileData = await fetch(raw)
   .then(r => r.text())
   .then(text =>  text);
 
 function App() {
-  let par = document.getElementById("heading-words");
-  const domNode = document.getElementById('root');
   return (
     <>
       <div class="heading" id ="heading">
